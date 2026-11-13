@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Contactly</string>
+    <string name="home_subtitle_empty">No contacts saved yet</string>
+    <string name="home_subtitle_count">%1$d contacts • %2$d favorites</string>
+    <string name="home_subtitle_single_contact">1 contact • %1$d favorites</string>
+
+    <!-- Search & Filters -->
+    <string name="search_hint">Search by name, phone, or email</string>
+    <string name="clear_search">Clear search</string>
+    <string name="filter_all">All</string>
+    <string name="filter_favorites">Favorites</string>
+    <string name="section_favorites">Favorites</string>
+    <string name="section_all_contacts">All Contacts</string>
+    <string name="section_search_results">Search Results</string>
+
+    <!-- Empty States -->
+    <string name="empty_contacts_title">Your address book is empty</string>
+    <string name="empty_contacts_subtitle">Add your first contact or load sample contacts to explore Contactly.</string>
+    <string name="empty_search_title">No matching contacts</string>
+    <string name="empty_search_subtitle">No contacts found for \"%1$s\".</string>
+    <string name="empty_favorites_title">No favorite contacts yet</string>
+    <string name="empty_favorites_subtitle">Tap the star icon on any contact to pin them here for quick access.</string>
+
+    <!-- Actions & Menus -->
+    <string name="action_add_contact">Add Contact</string>
+    <string name="action_load_samples">Load Sample Contacts</string>
+    <string name="action_remove_samples">Remove Sample Contacts</string>
+    <string name="action_save">Save Contact</string>
+    <string name="action_update">Update Contact</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_call">Call</string>
+    <string name="action_message">Message</string>
+    <string name="action_email">Email</string>
+    <string name="action_choose_photo">Choose Photo</string>
+    <string name="action_remove_photo">Remove Photo</string>
+    <string name="action_toggle_favorite">Toggle favorite</string>
+    <string name="action_navigate_back">Navigate back</string>
+
+    <!-- Screen Titles -->
+    <string name="title_add_contact">New Contact</string>
+    <string name="title_edit_contact">Edit Contact</string>
+    <string name="title_contact_details">Contact Details</string>
+
+    <!-- Form Labels -->
+    <string name="hint_full_name">Full name *</string>
+    <string name="hint_phone">Phone number *</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_company">Company</string>
+    <string name="hint_job_title">Job title</string>
+    <string name="hint_notes">Notes</string>
+    <string name="label_favorite_switch">Mark as favorite</string>
+    <string name="label_favorite_switch_desc">Pin this contact in your Favorites section</string>
+
+    <!-- Details Labels -->
+    <string name="section_contact_info">Contact Information</string>
+    <string name="section_work_info">Work</string>
+    <string name="section_notes">Notes</string>
+    <string name="label_phone">Phone</string>
+    <string name="label_email">Email</string>
+    <string name="label_company">Company</string>
+    <string name="label_job_title">Job Title</string>
+    <string name="badge_sample">Sample</string>
+    <string name="badge_favorite">Favorite</string>
+    <string name="label_updated_at">Last updated %1$s</string>
+    <string name="contact_not_found">Contact no longer exists</string>
+
+    <!-- Dialogs & Feedback -->
+    <string name="dialog_delete_title">Delete contact?</string>
+    <string name="dialog_delete_message">Remove %1$s from Contactly? This action cannot be undone.</string>
+    <string name="msg_contact_saved">Contact saved</string>
+    <string name="msg_contact_updated">Contact updated</string>
+    <string name="msg_contact_deleted">Contact deleted</string>
+    <string name="msg_samples_loaded">8 sample contacts added</string>
+    <string name="msg_samples_already_loaded">Sample contacts are already loaded</string>
+    <string name="msg_samples_removed">Sample contacts removed</string>
+    <string name="msg_added_favorite">Added to favorites</string>
+    <string name="msg_removed_favorite">Removed from favorites</string>
+</resources>

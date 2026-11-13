@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/contactsFragment">
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.snj.contactly.ui.contacts.ContactsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_contacts">
+
+        <action
+            android:id="@+id/action_contacts_to_add"
+            app:destination="@id/addContactFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_contacts_to_details"
+            app:destination="@id/contactDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.snj.contactly.ui.add.AddContactFragment"
+        android:label="@string/title_add_contact"
+        tools:layout="@layout/fragment_contact_form" />
+
+    <fragment
+        android:id="@+id/contactDetailsFragment"
+        android:name="com.snj.contactly.ui.details.ContactDetailsFragment"
+        android:label="@string/title_contact_details"
+        tools:layout="@layout/fragment_contact_details">
+
+        <argument
+            android:name="contactId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_details_to_edit"
+            app:destination="@id/editContactFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editContactFragment"
+        android:name="com.snj.contactly.ui.edit.EditContactFragment"
+        android:label="@string/title_edit_contact"
+        tools:layout="@layout/fragment_contact_form">
+
+        <argument
+            android:name="contactId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
+
