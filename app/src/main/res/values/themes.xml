@@ -47,10 +47,10 @@
 
     <!-- Reusable Card Style -->
     <style name="Widget.Contactly.Card" parent="Widget.Material3.CardView.Elevated">
-        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardBackgroundColor">?attr/colorSurfaceVariant</item>
         <item name="cardCornerRadius">@dimen/card_corner_radius</item>
-        <item name="cardElevation">1dp</item>
-        <item name="strokeColor">?attr/colorOutlineVariant</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">?attr/colorOutline</item>
         <item name="strokeWidth">1dp</item>
     </style>
 
@@ -60,22 +60,41 @@
         <item name="boxCornerRadiusTopEnd">@dimen/input_corner_radius</item>
         <item name="boxCornerRadiusBottomStart">@dimen/input_corner_radius</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/input_corner_radius</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="startIconTint">?attr/colorPrimary</item>
     </style>
 
     <!-- Reusable Primary & Tonal Buttons -->
     <style name="Widget.Contactly.Button.Primary" parent="Widget.Material3.Button">
         <item name="cornerRadius">@dimen/button_corner_radius</item>
         <item name="android:minHeight">@dimen/touch_target_min</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
     <style name="Widget.Contactly.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
         <item name="cornerRadius">@dimen/button_corner_radius</item>
         <item name="android:minHeight">@dimen/touch_target_min</item>
+        <item name="backgroundTint">?attr/colorSurfaceVariant</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
 
     <style name="Widget.Contactly.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
         <item name="cornerRadius">@dimen/button_corner_radius</item>
         <item name="android:minHeight">@dimen/touch_target_min</item>
+        <item name="strokeColor">?attr/colorOutline</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <!-- Reusable Floating Action Button -->
+    <style name="Widget.Contactly.ExtendedFAB" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+        <item name="cornerRadius">@dimen/card_corner_radius</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="iconTint">?attr/colorOnPrimary</item>
+        <item name="elevation">6dp</item>
     </style>
 
     <!-- Reusable Snackbar Style -->
@@ -88,10 +107,12 @@
     <style name="TextAppearance.Contactly.BrandTitle" parent="TextAppearance.Material3.HeadlineMedium">
         <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
 
     <style name="TextAppearance.Contactly.SectionHeader" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:letterSpacing">0.08</item>
     </style>

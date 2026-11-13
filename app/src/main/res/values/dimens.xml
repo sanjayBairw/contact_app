@@ -8,18 +8,23 @@
     <dimen name="spacing_lg">24dp</dimen>
     <dimen name="spacing_xl">32dp</dimen>
 
-    <!-- Shapes & Radii -->
-    <dimen name="card_corner_radius">16dp</dimen>
-    <dimen name="search_corner_radius">28dp</dimen>
-    <dimen name="button_corner_radius">12dp</dimen>
-    <dimen name="input_corner_radius">12dp</dimen>
+    <!-- Shapes & Radii (Between 16dp and 24dp for modern look) -->
+    <dimen name="card_corner_radius">18dp</dimen>
+    <dimen name="search_corner_radius">26dp</dimen>
+    <dimen name="button_corner_radius">14dp</dimen>
+    <dimen name="input_corner_radius">16dp</dimen>
     <dimen name="badge_corner_radius">8dp</dimen>
+    <dimen name="chip_corner_radius">20dp</dimen>
 
     <!-- Component Sizes -->
-    <dimen name="avatar_size_row">48dp</dimen>
-    <dimen name="avatar_size_form">88dp</dimen>
-    <dimen name="avatar_size_detail">96dp</dimen>
+    <dimen name="avatar_size_row">50dp</dimen>
+    <dimen name="avatar_size_favorite">52dp</dimen>
+    <dimen name="avatar_size_form">96dp</dimen>
+    <dimen name="avatar_size_detail">104dp</dimen>
     <dimen name="touch_target_min">48dp</dimen>
-    <dimen name="quick_action_button_height">56dp</dimen>
-</resources>
+    <dimen name="quick_action_button_height">64dp</dimen>
 
+    <!-- Favorite Horizontal Card Sizes -->
+    <dimen name="favorite_card_width">124dp</dimen>
+    <dimen name="favorite_card_height">150dp</dimen>
+</resources>

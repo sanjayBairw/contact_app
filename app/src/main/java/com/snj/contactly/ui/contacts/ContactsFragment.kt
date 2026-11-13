@@ -33,7 +33,7 @@ class ContactsFragment : Fragment() {
     }
 
     private lateinit var favoritesHeaderAdapter: SectionHeaderAdapter
-    private lateinit var favoritesAdapter: ContactAdapter
+    private lateinit var favoritesContainerAdapter: FavoritesContainerAdapter
     private lateinit var allHeaderAdapter: SectionHeaderAdapter
     private lateinit var allContactsAdapter: ContactAdapter
 
@@ -72,13 +72,13 @@ class ContactsFragment : Fragment() {
         }
 
         favoritesHeaderAdapter = SectionHeaderAdapter(getString(R.string.section_favorites))
-        favoritesAdapter = ContactAdapter(onContactClick, onFavoriteClick, onCallClick)
+        favoritesContainerAdapter = FavoritesContainerAdapter(onContactClick, onFavoriteClick, onCallClick)
         allHeaderAdapter = SectionHeaderAdapter(getString(R.string.section_all_contacts))
         allContactsAdapter = ContactAdapter(onContactClick, onFavoriteClick, onCallClick)
 
         val concatAdapter = ConcatAdapter(
             favoritesHeaderAdapter,
-            favoritesAdapter,
+            favoritesContainerAdapter,
             allHeaderAdapter,
             allContactsAdapter
         )
@@ -164,6 +164,9 @@ class ContactsFragment : Fragment() {
     }
 
     private fun renderState(state: ContactsUiState) {
+        binding.tvStatTotalCount.text = state.totalContactsCount.toString()
+        binding.tvStatFavoritesCount.text = state.totalFavoritesCount.toString()
+
         binding.tvContactCount.text = when (state.totalContactsCount) {
             0 -> getString(R.string.home_subtitle_empty)
             1 -> getString(R.string.home_subtitle_single_contact, state.totalFavoritesCount)
@@ -180,10 +183,10 @@ class ContactsFragment : Fragment() {
 
         if (state.showFavoritesSection) {
             favoritesHeaderAdapter.update(true, state.favoriteContacts.size)
-            favoritesAdapter.submitList(state.favoriteContacts)
+            favoritesContainerAdapter.submitList(state.favoriteContacts)
         } else {
             favoritesHeaderAdapter.update(false, 0)
-            favoritesAdapter.submitList(emptyList())
+            favoritesContainerAdapter.submitList(emptyList())
         }
 
         allHeaderAdapter.update(state.showAllContactsHeader, state.regularOrAllContacts.size)
@@ -279,4 +282,3 @@ class ContactsFragment : Fragment() {
         const val KEY_SNACKBAR_MESSAGE = "snackbar_message"
     }
 }
-

@@ -5,7 +5,7 @@
     style="@style/Widget.Contactly.Card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/spacing_sm"
+    android:layout_marginBottom="10dp"
     android:clickable="true"
     android:focusable="true">
 
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/spacing_md"
-        android:paddingVertical="12dp">
+        android:paddingVertical="14dp">
 
         <FrameLayout
             android:id="@+id/avatarContainer"
@@ -47,7 +47,7 @@
             android:id="@+id/textContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="14dp"
             android:layout_marginEnd="@dimen/spacing_xs"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -67,6 +67,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                     android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold"
                     app:layout_constrainedWidth="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/tvSampleBadge"
@@ -100,7 +101,7 @@
                 android:id="@+id/tvContactPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
@@ -123,10 +124,12 @@
 
         <ImageButton
             android:id="@+id/btnQuickCall"
-            android:layout_width="@dimen/touch_target_min"
-            android:layout_height="@dimen/touch_target_min"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_quick_call_pill"
             android:contentDescription="@string/action_call"
+            android:padding="9dp"
+            android:scaleType="fitCenter"
             android:src="@drawable/ic_call"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

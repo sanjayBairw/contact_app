@@ -4,6 +4,10 @@
     <string name="home_subtitle_count">%1$d contacts • %2$d favorites</string>
     <string name="home_subtitle_single_contact">1 contact • %1$d favorites</string>
 
+    <!-- Stats -->
+    <string name="stat_total_contacts">Total Contacts</string>
+    <string name="stat_favorites">Favorites</string>
+
     <!-- Search & Filters -->
     <string name="search_hint">Search by name, phone, or email</string>
     <string name="clear_search">Clear search</string>

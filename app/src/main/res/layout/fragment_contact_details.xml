@@ -21,7 +21,8 @@
             app:menu="@menu/menu_contact_details"
             app:navigationContentDescription="@string/action_navigate_back"
             app:navigationIcon="@drawable/ic_arrow_back"
-            app:title="@string/title_contact_details" />
+            app:title="@string/title_contact_details"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -37,7 +38,7 @@
             android:orientation="vertical"
             android:padding="@dimen/spacing_md">
 
-            <!-- Profile Header -->
+            <!-- Profile Hero Header -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +88,7 @@
                     android:layout_marginTop="@dimen/spacing_xs"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textColor="?attr/colorPrimary"
                     android:visibility="gone"
                     tools:text="Android Tech Lead • Pynexia Labs"
                     tools:visibility="visible" />
@@ -109,8 +110,11 @@
                         android:clickable="false"
                         android:text="@string/badge_favorite"
                         android:visibility="gone"
+                        app:chipCornerRadius="@dimen/chip_corner_radius"
                         app:chipIcon="@drawable/ic_star_filled"
                         app:chipIconTint="@color/contactly_favorite_active"
+                        app:chipStrokeColor="@color/contactly_favorite_active"
+                        app:chipStrokeWidth="1dp"
                         tools:visibility="visible" />
 
                     <com.google.android.material.chip.Chip
@@ -121,17 +125,21 @@
                         android:clickable="false"
                         android:text="@string/badge_sample"
                         android:visibility="gone"
+                        app:chipCornerRadius="@dimen/chip_corner_radius"
+                        app:chipStrokeColor="?attr/colorOutline"
+                        app:chipStrokeWidth="1dp"
                         tools:visibility="visible" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <!-- Quick Actions -->
+            <!-- Quick Action Cards (Call, Message, Email) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_sm"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
@@ -142,11 +150,15 @@
                     android:layout_marginEnd="@dimen/spacing_xs"
                     android:layout_weight="1"
                     android:text="@string/action_call"
+                    android:textColor="@color/contactly_call_tint"
+                    android:textStyle="bold"
                     app:backgroundTint="@color/contactly_call_bg"
+                    app:cornerRadius="@dimen/card_corner_radius"
                     app:icon="@drawable/ic_call"
                     app:iconGravity="textTop"
-                    app:iconTint="@color/contactly_call_tint"
-                    android:textColor="@color/contactly_call_tint" />
+                    app:iconPadding="4dp"
+                    app:iconSize="20dp"
+                    app:iconTint="@color/contactly_call_tint" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnActionMessage"
@@ -156,11 +168,15 @@
                     android:layout_marginHorizontal="@dimen/spacing_xs"
                     android:layout_weight="1"
                     android:text="@string/action_message"
+                    android:textColor="@color/contactly_sms_tint"
+                    android:textStyle="bold"
                     app:backgroundTint="@color/contactly_sms_bg"
+                    app:cornerRadius="@dimen/card_corner_radius"
                     app:icon="@drawable/ic_message"
                     app:iconGravity="textTop"
-                    app:iconTint="@color/contactly_sms_tint"
-                    android:textColor="@color/contactly_sms_tint" />
+                    app:iconPadding="4dp"
+                    app:iconSize="20dp"
+                    app:iconTint="@color/contactly_sms_tint" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnActionEmail"
@@ -170,15 +186,19 @@
                     android:layout_marginStart="@dimen/spacing_xs"
                     android:layout_weight="1"
                     android:text="@string/action_email"
+                    android:textColor="@color/contactly_email_tint"
+                    android:textStyle="bold"
                     app:backgroundTint="@color/contactly_email_bg"
+                    app:cornerRadius="@dimen/card_corner_radius"
                     app:icon="@drawable/ic_email"
                     app:iconGravity="textTop"
-                    app:iconTint="@color/contactly_email_tint"
-                    android:textColor="@color/contactly_email_tint" />
+                    app:iconPadding="4dp"
+                    app:iconSize="20dp"
+                    app:iconTint="@color/contactly_email_tint" />
 
             </LinearLayout>
 
-            <!-- Contact Info Card -->
+            <!-- Contact Information Card -->
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Contactly.Card"
                 android:layout_width="match_parent"
@@ -197,6 +217,7 @@
                         android:text="@string/section_contact_info"
                         android:textAppearance="@style/TextAppearance.Contactly.SectionHeader" />
 
+                    <!-- Phone row -->
                     <LinearLayout
                         android:id="@+id/rowPhone"
                         android:layout_width="match_parent"
@@ -207,12 +228,19 @@
                         android:orientation="horizontal"
                         android:paddingVertical="@dimen/spacing_xs">
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/ic_call"
-                            app:tint="?attr/colorPrimary" />
+                        <FrameLayout
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_quick_call_pill">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_call"
+                                app:tint="@color/contactly_call_tint" />
+                        </FrameLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -235,28 +263,37 @@
                                 android:layout_marginTop="2dp"
                                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                                 android:textColor="?attr/colorOnSurface"
+                                android:textStyle="bold"
                                 tools:text="+91 98765 43210" />
 
                         </LinearLayout>
 
                     </LinearLayout>
 
+                    <!-- Email row -->
                     <LinearLayout
                         android:id="@+id/rowEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:layout_marginTop="@dimen/spacing_md"
                         android:background="?attr/selectableItemBackground"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingVertical="@dimen/spacing_xs">
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/ic_email"
-                            app:tint="?attr/colorPrimary" />
+                        <FrameLayout
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_stat_icon_primary">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_email"
+                                app:tint="?attr/colorPrimary" />
+                        </FrameLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -311,6 +348,7 @@
                         android:text="@string/section_work_info"
                         android:textAppearance="@style/TextAppearance.Contactly.SectionHeader" />
 
+                    <!-- Company row -->
                     <LinearLayout
                         android:id="@+id/rowCompany"
                         android:layout_width="match_parent"
@@ -319,12 +357,19 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/ic_business"
-                            app:tint="?attr/colorPrimary" />
+                        <FrameLayout
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_stat_icon_primary">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_business"
+                                app:tint="?attr/colorPrimary" />
+                        </FrameLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -353,6 +398,7 @@
 
                     </LinearLayout>
 
+                    <!-- Job Title row -->
                     <LinearLayout
                         android:id="@+id/rowJobTitle"
                         android:layout_width="match_parent"
@@ -361,12 +407,19 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/ic_work"
-                            app:tint="?attr/colorPrimary" />
+                        <FrameLayout
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_stat_icon_primary">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_work"
+                                app:tint="?attr/colorPrimary" />
+                        </FrameLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -426,6 +479,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_sm"
+                        android:lineSpacingExtra="4dp"
                         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                         android:textColor="?attr/colorOnSurface"
                         tools:text="Mentoring Week 2 RecyclerView and Room persistence module." />
@@ -434,6 +488,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Last updated timestamp -->
             <TextView
                 android:id="@+id/tvUpdatedAt"
                 android:layout_width="match_parent"
@@ -444,10 +499,11 @@
                 android:textColor="?attr/colorOnSurfaceVariant"
                 tools:text="Last updated Nov 12, 2026" />
 
+            <!-- Edit & Delete Action Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_lg"
                 android:layout_marginBottom="@dimen/spacing_md"
                 android:orientation="horizontal">
 
@@ -455,21 +511,23 @@
                     android:id="@+id/btnEditContact"
                     style="@style/Widget.Contactly.Button.Primary"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="52dp"
                     android:layout_marginEnd="@dimen/spacing_sm"
                     android:layout_weight="1"
                     android:text="@string/action_edit"
+                    app:cornerRadius="@dimen/button_corner_radius"
                     app:icon="@drawable/ic_edit" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnDeleteContact"
                     style="@style/Widget.Contactly.Button.Outlined"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="52dp"
                     android:layout_marginStart="@dimen/spacing_sm"
                     android:layout_weight="1"
                     android:text="@string/action_delete"
                     android:textColor="?attr/colorError"
+                    app:cornerRadius="@dimen/button_corner_radius"
                     app:icon="@drawable/ic_delete"
                     app:iconTint="?attr/colorError"
                     app:strokeColor="?attr/colorError" />
@@ -481,4 +539,3 @@
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
